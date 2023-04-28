@@ -1,0 +1,152 @@
+:root{
+    --mainCol  : #3a4536;
+    --lightCol : #4c5c46;
+    --darkCol  : #333d2f;
+    --brightCol: #387326;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+button{
+    border: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* height: 100vh; */
+    width: 100vw;
+    gap: 20px;
+    /* background-color: rgba(15, 15, 59, 0.396); */
+    background-color: var(--mainCol);
+    font-family: "Roboto Mono", monospace;
+}
+
+nav{
+    text-align: center;
+    align-items: center;
+    width: 100vw;
+    height: 45px;
+    background-color: var(--darkCol);
+    position: fixed;
+    top:0;
+}
+
+.hide{
+    display:none !important;
+}
+.show{
+    display:block !important;
+}
+.circle {
+    width: 70%;
+    height: 70%;
+    border: 10px solid white;
+    border-radius: 50%;
+    margin:15%;
+}
+.cross {
+    width: 100%;
+    height: 100%;
+}
+.button{
+    text-align: center;
+    padding : 10px 20px 10px 20px;
+    border-radius: 100px;
+    color: #000;
+    background-color: #fff;
+}
+.gameTable{
+    text-align: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: var(--lightCol);
+}
+.cell{
+    display: inline-block;
+    margin: 3px;
+    border-radius: 20px;
+    background-color: var(--mainCol);
+    color: #fff;
+    font-size: 50px;
+    font-weight: bold;
+    justify-content: center;
+}
+.cell.active{
+    background: var(--brightCol);
+    animation-name: flip-in;
+    animation-duration: .3s;
+}
+.cell.deactive{
+    background: var(--mainCol);
+    animation-name: flip-out;
+    animation-duration: .3s;
+}
+@keyframes flip-in { from {transform: rotateX(0deg);} to {transform: rotateX(180deg);} }
+@keyframes flip-out { from {transform: rotateX(180deg);} to {transform: rotateX(0deg);} }
+
+@media (orientation : landscape){
+    /* wide screen */
+    .cell{
+        width: 25vh;
+        height: 25vh;
+    }
+}
+@media (orientation : portrait){
+    /* straight screen */
+    .cell{
+        width: 25vw;
+        height: 25vw;
+    }
+    #switch1,#switch2{
+        width: 25vw;
+    }
+}
+
+.gameOver{
+    display: block;
+    text-align: center;
+    position:absolute;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    color: #fff;
+    background-color: rgba(0, 0, 0, .7);
+}
+.centered{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.scoreTable{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#switch1,#switch2{
+    background: var(--lightCol);
+    border-radius: 15px;
+    color:#fff;
+    font-size: large;
+    margin-top: 7px;
+    width: 40vw;
+    height: 30px;
+}
+#switch1.active,#switch2.active{
+    background: var(--brightCol);
+}
+
+.my-5{
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}

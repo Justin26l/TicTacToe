@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Justin Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="style.css" />
+    
+    <script src="https://unpkg.com/brain.js@2.0.0-beta.18/dist/browser.js"></script>
+    <script defer src="ai.js"></script>
+    <script defer src="app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="cross" viewBox="0 0 24 24">
+            <path fill="#000" d="M6.4 19L5 17.6l5.6-5.6L5 6.4L6.4 5l5.6 5.6L17.6 5L19 6.4L13.4 12l5.6 5.6l-1.4 1.4l-5.6-5.6Z"/>
+        </symbol>
+    </svg>
+
+    <nav>
+        <button id="switch1" class="navItem" id="P1">Player 1</button>
+        <button id="switch2" class="navItem" id="P2">Player 2</button>
+    </nav>
+
+    <div class="gameTable">
+        <div row="0" col="0" class="cell"></div>
+        <div row="0" col="1" class="cell"></div>
+        <div row="0" col="2" class="cell"></div>
+        <br>
+        <div row="1" col="0" class="cell"></div>
+        <div row="1" col="1" class="cell"></div>
+        <div row="1" col="2" class="cell"></div>
+        <br>
+        <div row="2" col="0" class="cell"></div>
+        <div row="2" col="1" class="cell"></div>
+        <div row="2" col="2" class="cell"></div>
+    </div>
+
+    <div class="gameOver hide">
+        <div class="centered">
+            <h1 id="game-result">Player Win !</h1>
+            <button id="reset" class="button my-5">Restart</button>
+            <p>- Score -</p>
+            <table class="scoreTable">
+                <tr>
+                    <th>Player 1&emsp;</th>
+                    <th>&emsp;Player 2</th>
+                </tr>
+                <tr>
+                    <td class="P1-score">0</td>
+                    <td class="P2-score">0</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <pre id="history" style="background-color: silver; padding: 0% 5%; height:200px; overflow:scroll;"></pre>
+  </body>
+</html>
